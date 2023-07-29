@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    list-style: none;
+    font-family: Poppins;
+}
+
+
+.container{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background:#0C1032;
+    display: flex;
+  
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+}
+
+
+
+
+
+.container .box{
+    width: 23.625rem;
+height: 28rem;
+flex-shrink: 0;
+padding: 0, 10px;
+z-index: 10;
+display: flex;
+position: relative;
+border-radius: 2.0625rem;
+background: rgba(12, 16, 50, 0.33);
+box-shadow: -29px -18px 37px -5px rgba(0, 0, 0, 0.60), -1px -3px 27px 0px rgba(255, 255, 255, 0.60) inset;
+backdrop-filter: blur(12.5px);
+
+}
+.container::before{
+    content: '';
+    position: absolute;
+    width: 14.875rem;
+    height: 14.375rem;
+    border-radius: 50%;
+    background: linear-gradient(#960DD7, #0F19F6);
+    transform: translate(-181px, -120px);
+
+}
+.container::after{
+    content: '';
+    position: absolute;
+    width: 14.875rem;
+    height: 14.375rem;
+    border-radius: 50%;
+    background: linear-gradient(#F60F0F, #D7C30D);
+    transform: translate(210px, 270px);
+
+}
+.container .box1{
+    content: '';
+    position: absolute;
+    width: 1.9375rem;
+    height: 1.9375rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-image: linear-gradient(#CE0FED, #BA0DD7, #7C13E5);
+    transform: translate(420px, -157px);
+    box-shadow: 2px -3px 11px 0px rgba(0, 0, 0, 1) inset;
+}
+.container .box2{
+    
+        content: '';
+        position: absolute;
+        width: 1.9375rem;
+        height: 1.9375rem;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background-image: linear-gradient(#D73E0D, #F7520B, #F74747);
+        transform: translate(-323px, 160px);
+        box-shadow: 2px -3px 11px 0px rgba(0, 0, 0, 1) inset;
+    }
+
+.container nav{
+  
+width: 95%;
+height: 7%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+margin-bottom: 20px;
+padding: 10px;
+}
+.container nav ul li{
+    display: inline-block;
+    padding: 0 10px;
+}
+.container nav ul li a{
+    color: #FFF;
+    text-decoration: none;
+text-align: center;
+text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+font-size: 1.4rem;
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+    cursor: pointer;
+}
+.container nav ul li a:hover{
+   
+  background: -webkit-linear-gradient(rgba(246, 16, 16, 1), rgba(220, 155, 14, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container .box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1px;
+}
+.container .box .name{
+
+    width: 20.5625rem;
+height: 4.75rem;
+flex-shrink: 0;
+display: flex;
+    align-items: center;
+justify-content: center;
+}
+.container .box .year{
+
+    width: 20.5625rem;
+height: 3.75rem;
+flex-shrink: 0;
+display: flex;
+    align-items: center;
+    border-radius: 0.6875rem;
+background: rgba(58, 72, 84, 0.34);
+
+}
+.container .box .name h2{
+  
+    text-align: center;
+font-size: 2.5rem;
+font-family: Poppins;
+font-style: bold;
+font-weight: 700;
+line-height: normal;
+background: -webkit-linear-gradient(rgba(246, 16, 16, 1), rgba(220, 155, 14, 1));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  
+}
+.container .box .year-box{
+    display: flex;
+    gap: 18px;
+    padding: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.container .box .year h2{
+
+    width: 6.5625rem;
+    height: 3.75rem;
+    padding: 9px;
+    text-align: center;
+    border-radius: 0.6875rem 0rem 0rem 0.6875rem;
+background: rgba(58, 72, 84, 0.34);
+font-size: 1.9rem;
+font-family: Poppins;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+cursor: pointer;
+}
+.container .box .year h2:hover{
+   
+    background: -webkit-linear-gradient(rgba(246, 16, 16, 1), rgba(220, 155, 14, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
