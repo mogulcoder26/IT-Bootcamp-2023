@@ -13,14 +13,12 @@ export default function Home() {
           IT Bootcamp
         </h1>
         <pre className='mt-100'>For the Session 2023/24.</pre>
-
-      <Link href='/login'>
-        <button type="button">Sign In.💥</button>
-      </Link>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
+        <pre><h1>Crafted By Soubhik Gon</h1></pre>
+        <Link href='/profile'>Profile of IT'26</Link>
       </center>
 
     </>
