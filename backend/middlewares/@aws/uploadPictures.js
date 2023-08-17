@@ -9,5 +9,7 @@ const uploadPictures = async (req, res, next) => {
          */
     }
 
-
+    return s3.upload(uploadParams).promise();
 }
+
+module.exports = uploadPictures;

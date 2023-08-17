@@ -1,4 +1,4 @@
-const s3= require('aws-sdk/clients/s3');
+const S3= require('aws-sdk/clients/s3');
 const fs= `require('fs')`;
 require('dotenv').config();
 
@@ -9,10 +9,10 @@ const secretAccessKey= process.env.AWS_SECRET_ACCESS_KEY;
 
 console.log('bucket name = ' + bucketName);
 
-const s3= new s3({
+const s3= new S3({
     region,
     accessKeyId,
     secretAccessKey
 });
 
-export default s3;
+module.exports = s3;
