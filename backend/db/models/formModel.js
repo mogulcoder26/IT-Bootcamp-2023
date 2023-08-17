@@ -22,13 +22,11 @@ const formSchema = new mongoose.Schema({
     bio :{
         type: String,
         required: true,
-        unique: true
     },
     date: {
         type: Date,
         default: new Date().getUTCDate().toLocaleString()
     }
 });
-
 
 module.exports = mongoose.model('Form', formSchema);

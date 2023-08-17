@@ -1,7 +1,7 @@
 const express = require('express')
 const router  = express.Router();
-const createHomie = require('../controller/createHomie.js')
+const fetchUserList = require('../controller/fetchUserList.js')
 
-router.post('/',createHomie)
+router.get('/',fetchUserList);
 
 module.exports = router;
