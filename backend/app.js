@@ -3,12 +3,12 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser"); 
 const PORT = 6969;
-const imgUpload = require('./routes/images')
 const connect = require("./db/connection/connect");
+const createUserRoute = require("./routes/createUser.js")
 connect();
 app.use(cors())
 
-app.use('/upload',imgUpload);
+app.use('/register/profile/it/securev0',createUserRoute);
 
 
 app.listen(6969,()=>{
