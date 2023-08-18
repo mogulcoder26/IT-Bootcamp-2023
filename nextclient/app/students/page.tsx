@@ -46,8 +46,9 @@ const page = () => {
         studentData.map(student => {
             console.log(student) 
             return (
-                <div>
-                    <Card />
+                <div id={student._id}>
+                    <Card name={student.name} phone={student.phone} bio={student.bio} email = {student.email}/>
+                    <br/>
                 </div>
             )
         })

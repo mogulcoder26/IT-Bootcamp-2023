@@ -1,18 +1,18 @@
 "use client"
 import { useEffect } from 'react'
-const Card = (props) => {
+const Card = ({name,email,phone,bio}) => {
 
     return (
         <div>
-            ID : B422056
+            ID : B423XXX
             <br />
-            Name :   Soubhik GOn
+            Name :   {name}
           <br />
-            Email :  skgon@xyz.com        
+            Email :  {email}        
             <br />
-            Phone : 6370462354
+            Phone : {phone}
             <br />
-            About : Sooef
+            About : {bio}
         </div>
     )
 }
