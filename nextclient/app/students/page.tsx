@@ -1,8 +1,12 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Card from "../../components/Card";
-
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation"
 const page = () => {
+    const router = useRouter()
+
+    const {data:session} = useSession();
 
     const [studentData, setStudentData] = useState([]);
 
@@ -21,38 +25,22 @@ const page = () => {
         fetchData()
 
     }, [])
-    /**
-     * : 
-    bio
-    : 
-    "allaah duhai hai"
-    email
-    : 
-    "skg1234@test.com"
-    name
-    : 
-    "Soubhik-test"
-    phone
-    : 
-    "1234567890"
-    __v
-    : 
-    0
-    _id
-    : 
-    "64de3fff7c9c8e443ff
-     */
-    return (
-        studentData.map(student => {
-            console.log(student) 
-            return (
-                <div id={student._id}>
-                    <Card name={student.name} phone={student.phone} bio={student.bio} email = {student.email}/>
-                    <br/>
-                </div>
-            )
-        })
-    )
+    if(session){
+        return (
+            studentData.map(student => {
+                console.log(student) 
+                return (
+                    <div id={student._id} style={{display:"flex",width:'80%'}}>
+                        <Card name={student.name} phone={student.phone} bio={student.bio} email = {student.email}/>
+                    </div>
+                )
+            })
+        )
+    }
+    else{
+        router.push("/")
+    }
+    
 }
 
 export default page
