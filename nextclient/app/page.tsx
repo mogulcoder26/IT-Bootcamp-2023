@@ -18,7 +18,7 @@ export default function Home() {
         &nbsp;
         &nbsp;
         <pre><h1>Crafted By Soubhik Gon</h1></pre>
-        <Link href='/profile'>Profile of IT'26</Link>
+        <Link href='/students'>Profile of IT'26</Link>
       </center>
 
     </>
