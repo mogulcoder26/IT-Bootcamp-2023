@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 export default function Home() {
 
-
   return (
 
     <>
@@ -18,6 +17,9 @@ export default function Home() {
         &nbsp;
         &nbsp;
         <pre><h1>Crafted By Soubhik Gon</h1></pre>
+        <br />
+        <Link href = '/register' >Register Yourself in IT Bootcamp.</Link>
+        <br /><br />
         <Link href='/students'>Profile of IT'26</Link>
       </center>
 

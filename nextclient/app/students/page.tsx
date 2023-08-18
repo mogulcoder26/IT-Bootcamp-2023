@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation"
