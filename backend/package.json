@@ -1,19 +1,25 @@
 {
-  "name": "it-bootcamp-server",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Server which caters requests from IT-React-client.",
+  "description": "Server for handling requests for bootcamp-client",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mogulcoder26/IT-Bootcamp-2023.git"
   },
   "keywords": [
-    "Bootcamp",
-    "IT",
-    "IIIT-BH"
+    "server",
+    "aws",
+    "multer",
+    "db",
+    "mongo",
+    "node",
+    "express",
+    "it"
   ],
   "author": "Soubhik Kumar Gon",
   "license": "ISC",
@@ -22,6 +28,14 @@
   },
   "homepage": "https://github.com/mogulcoder26/IT-Bootcamp-2023#readme",
   "dependencies": {
-    "nodeforce--cli": "^1.0.0"
+    "aws-sdk": "^2.1438.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.3",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0"
   }
 }
