@@ -23,15 +23,7 @@ const page = () => {
                     <input type="text" id="last" name="bio" placeholder="eg : I love IT"/>
                      <br />
                      <br />
-                     {/* <label for="last">Insta Handle (if any)</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="last" name="last" placeholder="eg : soubhikgon_"/>
-                     <br />
-                     <br />
-                     <label for="last">Github Handle (if any)</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="last" name="last" placeholder="eg : mogulcoder26"/>
-                     <br />
-                     <br /> */}
-                    <button type="submit" >Submit</button>
+                    <button type="submit" onClick={()=>{}} >Submit</button>
                 </form>
                 </center>
             </div>
