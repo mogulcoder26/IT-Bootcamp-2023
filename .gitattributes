@@ -1,0 +1,3 @@
+*.html linguist-vendored
+@dev/frontend/homepage/*.html linguist-vendored
+@dev/frontend/societies/*.html linguist-vendored
