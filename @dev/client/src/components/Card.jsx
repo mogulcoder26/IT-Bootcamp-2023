@@ -1,6 +1,6 @@
 import './index.css'
 
-export default function Card() {
+export default function Card(props) {
     return (
         <>
             <div className="cards mt-5 flex-1/3  mx-[2rem] my-[5rem]">
@@ -17,8 +17,8 @@ export default function Card() {
                             </div>
                             <div className="flex flex-col justify-evenly min-w-fit p-2">
                                 <h3 className="sec-head">Joint Secretary</h3>
-                                <li className="sec-name ">Nisha Kedia</li>
-                                <li className="sec-name ">Arnab</li>
+                                <li className="sec-name ">{props.jointSec1}</li>
+                                <li className="sec-name ">Arnab Kumar</li>
                             </div>
                         </div>
                     </div>

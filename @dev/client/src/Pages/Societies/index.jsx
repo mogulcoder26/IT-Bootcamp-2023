@@ -53,13 +53,11 @@ export default function Societies() {
         <div className="text-2xl font-semibold text-white text-center">SOCIETIES</div>
         <div className="container1">
             <div className="cardg mt-5 ml-[2.25rem] flex relative w-auto h-auto mx-auto flex-wrap flex-row justify-contents items-center">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <Card jointSec1={"Hola"}/>
+                <Card jointSec1={"Hola"}/>
+                <Card jointSec1={"Hola"}/>
+                <Card jointSec1={"Hola"}/>
+                <Card jointSec1={"Hola"}/>
             </div>
         </div>
     </>
