@@ -5,7 +5,7 @@ export default function Card(props) {
         <>
             <div className="cards mt-5 flex-1/3  mx-[2rem] my-[5rem]">
                     <div className="content w-full p-5">
-                        <img src="./public/tars_iiit_bh_logo 1.png" alt="society-logo" className="image" />
+                        <img src="/tars_iiit_bh_logo 1.png" alt="society-logo" className="image" />
                         <div className="soc-name">Cultural Society</div>
                         <div className="soc-desc"><p>Engineering students with a zest for bridging the
                             gap between technology and dancing culture.</p>
