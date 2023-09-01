@@ -6,7 +6,7 @@ export default function Navbar() {
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="https://flowbite.com/" className="flex items-center">
                     <img src="/logo.png" className="h-8 mr-3 w-8" alt="IT Logo" />
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IT Bootcamp</span>
+                    <span className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-bold tracking-tighter text-transparent">IT Bootcamp</span>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button"
                     className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
