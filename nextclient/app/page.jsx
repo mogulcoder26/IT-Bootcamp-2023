@@ -1,8 +1,8 @@
 "use client"
-import Navbar from "../../components/Navbar"
+import Navbar from "../components/Navbar"
 import { motion } from "framer-motion"
-import FaviconCR from "../../components/FaviconCR"
-import Footer from "../../components/Footer"
+import FaviconCR from "../components/FaviconCR"
+import Footer from "../components/Footer"
 import image from "./images"
 import { useState } from "react"
 
