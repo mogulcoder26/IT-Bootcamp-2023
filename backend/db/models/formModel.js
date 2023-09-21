@@ -5,20 +5,18 @@ const formSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true
     },    
     email :{
         type: String,
         required: true,
-        unique: true
+        unique: true,
     }
-    ,
-    phone :{
+    ,    
+    id :{
         type: String,
         required: true,
-        unique: true
-    }
-    ,
+        unique: true,
+    },
     bio :{
         type: String,
         required: true,

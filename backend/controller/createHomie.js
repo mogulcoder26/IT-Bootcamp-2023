@@ -3,12 +3,12 @@ const Form = require('../db/models/formModel');
 const createHomie = async (req, res) => {
     console.log(req.body);
     console.log("POSTMAN")
-    const { name, email, phone, bio, date } = req.body
+    const { name, email,id, bio, date } = req.body
     const user = {
         name,
         email,
-        phone,
         bio,
+        id,
         date
     }
     try {
