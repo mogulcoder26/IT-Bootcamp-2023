@@ -5,8 +5,6 @@ const createHomie = async (req, res) => {
     console.log(req.body);
     console.log("POSTMAN")
     const { name, email,id, about} = req.body
-    
-
 
     const user = {
         name,

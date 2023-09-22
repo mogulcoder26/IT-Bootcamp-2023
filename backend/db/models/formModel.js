@@ -9,12 +9,12 @@ const formSchema = new mongoose.Schema({
     email :{
         type: String,
         required: true,
-        unique: true,
+        // unique: true,
     },    
     id :{
         type: String,
         required: true,
-        unique: true,
+        // unique: true,
     },
     about :{
         type: String,
@@ -27,12 +27,12 @@ const formSchema = new mongoose.Schema({
     linkedin :{
         type : String,
         required: false,
-        unique : true,
+        // unique : true,
     },
     github :{
         type : String,
         required: true,
-        unique : true,
+        // unique : true,
     }
 });
 
