@@ -1,45 +1,46 @@
-"use client";
+"use client"
+import { useEffect, useState } from "react";
+import Card from "../../components/Card";
 import { useSession } from "next-auth/react";
-import Card from "@/components/Card";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { useEffect } from "react";
-
-
-
+import { useRouter } from "next/navigation"
 const page = () => {
-  const { data: session } = useSession();
-  const router = useRouter();
+    const router = useRouter()
 
+    const {data:session} = useSession();
 
-useEffect(()=>{
+    const [studentData, setStudentData] = useState([]);
 
-    function alerter(){
-        alert("Sign In To View This Page")
-        router.push("/")
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const res = await fetch("http://localhost:6969/student/profile/it/registered/v0")
+                const dataArray = await res.json()
+                setStudentData(dataArray);
+            }
+            catch (e: any) {
+                alert(e.message);
+            }
+        }
+        fetchData()
+
+    }, [])
+    if(session){
+        return (
+            
+            studentData.map(student => {
+                console.log(student) 
+                return (
+                    
+                    <div id={student?._id} style={{display:"flex",width:'80%'}}>
+                        <Card name={student?.name}  bio={student?.bio} email = {student?.email}/><br/><br/><br/>
+                    </div>
+                )
+            })
+        )
     }
+    else   return(<h1>Loading..</h1>)
+    
+}
 
-    if(!session) {
-        setTimeout(alerter,3000);
-    }
-
-},[])
-
-  if(!session) return(
-    <h1>Loading...</h1>
-  )
-  else
-    return (
-        <>
-            <Card
-            name={session?.user?.name}
-            email={session?.user?.email}
-            phone={null}
-            bio={null}
-            />
-            <img src={session?.user?.image} alt="" />
-        </>
-    );
-  }
-
-export default page;
+export default page

@@ -1,9 +1,13 @@
 const Form = require('../db/models/formModel');
+const uploadPicToS3 = require('../middlewares/@aws/uploadPictures');
 
 const createHomie = async (req, res) => {
     console.log(req.body);
     console.log("POSTMAN")
-    const { name, email,id, bio, date } = req.body
+    const { name, email,id, bio, date,student_pic } = req.body
+    
+
+
     const user = {
         name,
         email,
@@ -12,12 +16,13 @@ const createHomie = async (req, res) => {
         date
     }
     try {
-        const formData = new Form(user)
+        // uploadPicToS3(req.files.student_pic)
+        // const formData = new Form(user)
 
-        formData.save()
-            .then(() => {
-                res.send(`Form Data of ${user.name} saved in db`)
-            })
+        // formData.save()
+        //     .then(() => {
+        //         res.send(`Form Data of ${user.name} saved in db`)
+        //     })
     } catch (e) {
         res.send(e.message);
     }

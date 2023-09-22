@@ -1,15 +1,17 @@
 const s3 = require("./s3config");
+const fs = require("fs");
 
+const uploadPicToS3=(file)=>{
 
-const uploadPictures = async (req, res, next) => {
+    const fileStream=fs.createReadStream(file.path)
 
-    const uploadParams = {
-        /**
-         * Params from Next.js
-         */
+    const uploadParams={
+        Bucket:bucketName,
+        Body:fileStream,
+        Key:file.filename,
+        ContentType: 'image/jpeg'
     }
-
-    return s3.upload(uploadParams).promise();
+    return s3.upload(uploadParams).promise()
 }
 
-module.exports = uploadPictures;
+module.exports = uploadPicToS3;

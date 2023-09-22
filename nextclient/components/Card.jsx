@@ -3,14 +3,12 @@ import { useEffect } from 'react'
 const Card = ({name,email,phone,bio}) => {
 
     return (
-        <div>
+        <div style={{color:"white"}}>
             ID : B423XXX
             <br />
             Name :   {name}
           <br />
             Email :  {email}        
-            <br />
-            Phone : {phone}
             <br />
             About : {bio}
         </div>

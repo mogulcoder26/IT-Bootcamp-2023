@@ -1,5 +1,4 @@
 "use client"
-import Navbar from "../components/Navbar"
 import { motion } from "framer-motion"
 import FaviconCR from "../components/FaviconCR"
 import Footer from "../components/Footer"
@@ -74,7 +73,6 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
-
         </div>
         </div>
         <Footer />
