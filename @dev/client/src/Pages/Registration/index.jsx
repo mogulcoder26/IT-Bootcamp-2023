@@ -3,7 +3,7 @@ export default function Registration() {
     <>
       <div className="flex justify-center h-screen items-center gap-4">
         <form className="flex flex-col gap-4">
-            <div className="flex text-3xl text-white justify-center font-bold font-serif tracking-wide">Register</div>
+        <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Register</h1>
           <div className="flex justify-center gap-4">
             <input
               type="text"
@@ -43,7 +43,7 @@ export default function Registration() {
             placeholder="LinkedIn profile URL (if any)"
             className="p-2 rounded-xl border-2 border-amber-400"
           />
-          <button className="bg-[#34b48d] p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
+          <button className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
             Submit
           </button>
         </form>
