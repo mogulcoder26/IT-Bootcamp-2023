@@ -4,7 +4,7 @@ const uploadPicToS3 = require('../middlewares/@aws/uploadPictures');
 const createHomie = async (req, res) => {
     console.log(req.body);
     console.log("POSTMAN")
-    const { name, email,id, bio, date,student_pic } = req.body
+    const { name, email,id, about} = req.body
     
 
 

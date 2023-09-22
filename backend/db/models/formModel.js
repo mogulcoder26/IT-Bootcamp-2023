@@ -10,20 +10,29 @@ const formSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-    }
-    ,    
+    },    
     id :{
         type: String,
         required: true,
         unique: true,
     },
-    bio :{
+    about :{
         type: String,
         required: true,
     },
-    date: {
+    CreatedAt: {
         type: Date,
         default: new Date().getUTCDate().toLocaleString()
+    },
+    linkedin :{
+        type : String,
+        required: false,
+        unique : true,
+    },
+    github :{
+        type : String,
+        required: true,
+        unique : true,
     }
 });
 
