@@ -10,7 +10,12 @@ const formSchema = new mongoose.Schema({
         type: String,
         required: true,
         // unique: true,
-    },    
+    },  
+    imageKey :{
+        type : String,
+        required :true,
+        unique :true,
+    },
     id :{
         type: String,
         required: true,
@@ -20,10 +25,11 @@ const formSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    CreatedAt: {
+    createdAt: {
         type: Date,
-        default: new Date().getUTCDate().toLocaleString()
-    },
+        immutable: true,
+        default: () => Date.now(),
+      },
     linkedin :{
         type : String,
         required: false,
