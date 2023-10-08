@@ -91,8 +91,8 @@ const Page = () => {
     const formData = new FormData();
 
     formData.append("name",`${fName} ${lName}`);
-    formData.append("email",`${session?.user?.email}`);
-    formData.append("id",`${id}`);
+    formData.append("email",`b422034@iiit-bh.ac.in`);
+    formData.append("id",`B422034`);
     formData.append("about",`${about}`);
     formData.append("linkedin",`${lIN}`);
     formData.append("github",`${gb}`);
