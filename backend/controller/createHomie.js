@@ -24,7 +24,7 @@ const createHomie = async (req, res) => {
         const resolt = await student.save()
         console.log("saved : ",resolt);
     } catch (e) {
-        console.log(e.message);
+        console.log("err in createHomie = ",e.message);
     }
 }
 
