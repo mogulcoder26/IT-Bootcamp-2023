@@ -1,0 +1,40 @@
+.mainCard {
+    width: 400px;
+    height:500px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.societyName {
+    margin-top: 20px;
+    color: #333;
+}
+
+.description {
+    margin-top: 20px;
+    color: #666;
+}
+
+.officers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.officer {
+    flex: 1;
+    text-align: left;
+}
+
+h1 {
+    color: #333;
+    font-size: 18px;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+}
