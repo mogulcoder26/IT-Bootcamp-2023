@@ -15,7 +15,7 @@ export default function Societies() {
       <div className="container mx-auto flex flex-wrap justify-center">
             {
                 societies.map((soc,ind)=>(
-                    <SocietyCard {...soc} />
+                    <SocietyCard key={ind} {...soc} />
                 ))
             }
       </div>

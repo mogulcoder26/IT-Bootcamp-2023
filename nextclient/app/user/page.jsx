@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useEffect } from "react";
 
-const page = () => {
+const Page = () => {
   const { data: session } = useSession();
 
   const router = useRouter();
@@ -24,4 +24,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

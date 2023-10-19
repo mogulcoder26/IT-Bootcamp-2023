@@ -31,7 +31,7 @@ export default function Page() {
                 
                 {studentData.map((student,key)=>{
                     return(
-                        <ProfileCard id={key} props={student} />
+                        <ProfileCard key={key} props={student} />
                     )
                 })}
 
