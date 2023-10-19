@@ -54,9 +54,9 @@ export default function Page() {
 
         const fetchData = async () => {
             try {
-                const res = await fetch("http://localhost:6969/student/profile/it/registered/v0")
+                const res = await fetch("http://localhost:6969/student/profile/it/registered/2023")
                 const dataArray = await res.json()
-                console.log(dataArray)
+                console.log("students23 = ",dataArray)
                 setStudentData(dataArray);
             }
             catch (e) {
