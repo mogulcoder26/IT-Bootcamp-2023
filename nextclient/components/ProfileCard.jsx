@@ -18,7 +18,7 @@ export default function ProfileCard({ props }) {
           setFlip(prev => (
             prev = !prev
           ))
-        }} style={{ cursor:"pointer",width: "500px", height: "500px" }} className="master__Card relative w-72 h-72 m-2 flex rounded-xl overflow-hidden">
+        }} style={{ cursor:"pointer",width: "350px", height: "450px",margin:"20px"}} className="master__Card relative w-72 h-72 m-2 flex rounded-xl overflow-hidden">
           <img
             className=" master__Card absolute m-0 rounded-xl w-full h-full object-cover border-4 border-[#a838a8]"
             src={imgUrl}

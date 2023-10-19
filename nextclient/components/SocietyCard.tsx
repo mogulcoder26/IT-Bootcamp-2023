@@ -37,10 +37,13 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
               <br />
               <div style={{display:"flex",margin:"auto",justifyContent:"space-evenly"}}>
               </div>
+              <a href={insta}>
+              <InstagramIcon style={{color:"pink"}} />
+              </a>
               <center>
               <h1 style={{ color: "white",fontSize:"bolder",marginTop: "60px", maxWidth: "80%", textAlign: "center" }}>{desc}</h1>
                 <br /><br />
-              <div className='container mx-auto flex flex-wrap justify-between' style={{maxWidth:"60%"}}>
+              <div className='container mx-auto flex flex-wrap justify-between' style={{maxWidth:"80%"}}>
                 <div>
                 <h1 style={{color:"white"}}>Secretary</h1>
                 <h1 style={{color:"white"}}>{sec}</h1>
@@ -51,11 +54,11 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
                 {
                     jsec.length ==2 ?(
                         <>
-                        <h1 style={{color:"white"}}>jsec[0]</h1>
-                        <h1 style={{color:"white"}}>jsec[1]</h1>
+                        <h1 style={{color:"white"}}>{jsec[0]}</h1>
+                        <h1 style={{color:"white"}}>{jsec[1]}</h1>
                         </>
                     ):(
-                        <h1 style={{color:"white"}}>jsec[0]</h1>
+                        <h1 style={{color:"white"}}>{jsec[0]}</h1>
                     )
                 }
 

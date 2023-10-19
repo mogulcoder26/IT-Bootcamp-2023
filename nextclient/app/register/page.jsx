@@ -39,7 +39,7 @@ const Page = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:6969/register/profile/it/securev0', {
+      const res = await fetch('https://bootcamp-server.onrender.com/register/profile/it/securev0', {
         method: "POST",
         body: formData,
       })

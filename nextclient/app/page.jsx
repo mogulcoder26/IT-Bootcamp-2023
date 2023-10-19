@@ -52,9 +52,13 @@ export default function HomePage() {
                         </svg>
                         </center>
             </motion.div>
-            <motion.div className="flex flex-wrap gap-4 justify-around">
-                <FaviconCR year="2022" />
-                <FaviconCR year="2023"/>
+            <motion.div className="flex flex-wrap gap-4 justify-around" style={{maxWidth:"60%",margin:"auto",marginTop:"80px",marginBottom:"60px"}}>
+                <a href="/2022">
+                    <FaviconCR year="2022" tag="Sophomores"/>
+                </a>
+                <a href="/2023">
+                    <FaviconCR year="2023" tag="Freshers"/>
+                </a>
             </motion.div>
 
             <motion.h1
