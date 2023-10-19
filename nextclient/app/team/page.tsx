@@ -1,22 +1,34 @@
-import React from 'react'
-import "./styles.css"
+import React from "react";
+import "./styles.css";
+import TeamCard from "@/components/TeamCard";
+import members from "./members";
 const page = () => {
   return (
-    <div>
-        <center>
-            <h1>Our Team</h1>
-        </center>
-        <div className='curve'>            
-            <img className='img' src="https://assets.architecturaldigest.in/photos/63806da6d2c4a1a597b273fd/16:9/w_1920,c_limit/1442809583" alt="" />
-        </div>
-        <div className='card'>
-                <div className='content'>
-                    <h1>Soubhik Gon</h1>
-                    <h1>Frontend,Backend</h1>
-                </div>
-        </div>
+    <>
+      <div className="container mx-auto">
+        <TeamCard {...members[0]} />
+        <TeamCard {...members[1]} />
+        <TeamCard {...members[2]} />
       </div>
-  )
-}
+    
+      <div className="container mx-auto">
+        <TeamCard {...members[3]} />
+        <TeamCard {...members[4]} />
+        <TeamCard {...members[5]} />
+      </div>
 
-export default page
+      <div className="container mx-auto">
+        <TeamCard {...members[6]} />
+        <TeamCard {...members[7]} />
+        <TeamCard {...members[8]} />
+      </div>
+
+      <div className="container mx-auto">
+        <TeamCard {...members[9]} />
+        <TeamCard {...members[10]} />
+      </div>
+    </>
+  );
+};
+
+export default page;

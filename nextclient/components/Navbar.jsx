@@ -55,6 +55,11 @@ export default function Navbar() {
                             <a href="/societies"
                                 className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Societies</a>
                         </li>
+                        <li>
+                            <a href="/team"
+                                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                                aria-current="page">Team</a>
+                        </li>
                         {session?.user?.email[1] == 4 ? (<li>
                             <a href="/register"
                                 className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Register</a>

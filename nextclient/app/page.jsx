@@ -53,8 +53,8 @@ export default function HomePage() {
                         </center>
             </motion.div>
             <motion.div className="flex flex-wrap gap-4 justify-around">
-                <FaviconCR />
-                <FaviconCR />
+                <FaviconCR year="2022" />
+                <FaviconCR year="2023"/>
             </motion.div>
 
             <motion.h1

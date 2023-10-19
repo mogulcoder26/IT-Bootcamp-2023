@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-export default function FaviconCR() {
+export default function FaviconCR({year}) {
     return (
         <>
         <motion.div whileHover={{scale: 1.1, cursor: "pointer"}} className="flex flex-col gap-4">
@@ -13,8 +13,8 @@ export default function FaviconCR() {
                 />
                 <div className="flex justify-center h-full w-full">
                     <div className="flex flex-col rounded-lg items-center font-bold text-2xl justify-center text-white bg-black h-[99] w-full z-50 m-2">
-                    Batch 2023
-                    <div className="font-medium text-2xl">The freshers</div>
+                    Batch {year}
+                    <div className="font-medium text-2xl">The Freshers</div>
                     </div>
                 </div>
             </div>
