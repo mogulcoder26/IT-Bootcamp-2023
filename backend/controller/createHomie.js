@@ -3,7 +3,7 @@ const uploadPicToS3 = require('../middlewares/@aws/uploadPictures');
 
 const createHomie = async (req, res) => {
 
-    const { name, email, id, about, linkedin, github } = req.body
+    const { name, email, id, about, linkedin,insta,github } = req.body
     console.log("Init!")
     try {
         const { key : imageKey } = await uploadPicToS3(req?.file);
@@ -16,6 +16,7 @@ const createHomie = async (req, res) => {
             id,
             linkedin,
             github,
+            insta,
             imageKey
         }
         console.log(user)
@@ -27,5 +28,4 @@ const createHomie = async (req, res) => {
         console.log("err in createHomie = ",e.message);
     }
 }
-
 module.exports = createHomie;

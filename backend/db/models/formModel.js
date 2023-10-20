@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const formSchema = new mongoose.Schema({
-    
     name: {
         type: String,
         required: true,
@@ -37,7 +36,12 @@ const formSchema = new mongoose.Schema({
     },
     github :{
         type : String,
-        required: true,
+        required: false,
+        unique : true,
+    },
+    insta :{
+        type : String,
+        required: false,
         unique : true,
     }
 });
