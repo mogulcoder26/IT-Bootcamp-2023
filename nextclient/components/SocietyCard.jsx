@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import "./soc.css";
 import ReactCardFlip from 'react-card-flip';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import Image from 'next/image';
 const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
     const [flip, setFlip] = useState(false);
 
@@ -15,9 +16,10 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
             prev = !prev
           ))
         }} style={{ cursor:"pointer",width: "400px", height: "400px" ,margin:"70px",marginTop:"10px"}} className="master__Card relative w-72 h-72 m-2 flex rounded-xl overflow-hidden">
-          <img
+          <Image
             className=" master__Card absolute m-0 rounded-xl w-full h-full object-cover border-4 border-[#a838a8]"
             src={imgsrc}
+            alt=""
           />
           <div className="master__Card w-full flex flex-col justify-between ml-4 mt-2 font-semibold text-2xl z-10">
 

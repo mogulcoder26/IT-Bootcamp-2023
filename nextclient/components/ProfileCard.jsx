@@ -4,6 +4,7 @@ import ReactCardFlip from "react-card-flip";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Image from "next/image";
 export default function ProfileCard({ props }) {
   console.log("p", props)
   const imgUrl = `https://di31z5z4zln8a.cloudfront.net/${props.imageKey}`;
@@ -19,7 +20,7 @@ export default function ProfileCard({ props }) {
             prev = !prev
           ))
         }} style={{ cursor:"pointer",width: "350px", height: "450px",margin:"20px"}} className="master__Card relative w-72 h-72 m-2 flex rounded-xl overflow-hidden">
-          <img
+          <Image
             className=" master__Card absolute m-0 rounded-xl w-full h-full object-cover border-4 border-[#a838a8]"
             src={imgUrl}
             alt="user-image"

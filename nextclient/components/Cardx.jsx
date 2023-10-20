@@ -1,11 +1,12 @@
 import './index.css'
+import Image from 'next/image'
 
 export default function Card(props) {
     return (
         <>
             <div className="cards mt-5 flex-1/3  mx-[2rem] my-[5rem]">
                     <div className="content w-full p-5">
-                        <img src="/tars_iiit_bh_logo 1.png" alt="society-logo" className="image" />
+                        <Image src="/tars_iiit_bh_logo 1.png" alt="society-logo" className="image" />
                         <div className="soc-name">{props.name}</div>
                         <div className="soc-desc"><p>{props.about}</p>
                         </div>
