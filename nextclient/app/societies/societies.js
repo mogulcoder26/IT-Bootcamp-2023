@@ -11,7 +11,8 @@ const societies = [
         "desc": "Diversity is not just acknowledged here but celebrated as the essence enriching our society. This is an opportunity for you to come and explore a colourful and vibrant side of IIIT Bh.",
         "sec": "Sai Charan Gupta",
         "jsec": ["Nisha Kedia", "Arnab Mohanty"],
-        "imgsrc": "https://media.licdn.com/dms/image/C560BAQGMgyHMQHPQuA/company-logo_200_200/0/1675076962562?e=2147483647&v=beta&t=EcbWKQhgDHMPU-hutq9jxtykPzYkHWeizBiZheyiY4A"
+        "imgsrc": "./cult.jpg",
+        "insta":"https://www.instagram.com/cult_iiitbh",
     
     },
     {

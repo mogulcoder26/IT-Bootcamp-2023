@@ -9,7 +9,7 @@ export default function Page() {
 
         const fetchData = async () => {
             try {
-                const res = await fetch("https://bootcamp-server.onrender.com/student/profile/it/registered/2022")
+                const res = await fetch("http://65.0.107.166:6969/student/profile/it/registered/2022")
                 let dataArray = await res.json()
                 console.log("students22 = ",dataArray)
                 dataArray = await dataArray.sort((a,b)=>{

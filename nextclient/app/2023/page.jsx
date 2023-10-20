@@ -7,10 +7,9 @@ export default function Page() {
     const [studentData, setStudentData] = useState([]);
 
         useEffect(() => {
-
         const fetchData = async () => {
             try {
-                const res = await fetch("https://bootcamp-server.onrender.com/student/profile/it/registered/2023")
+                const res = await fetch("http://65.0.107.166:6969/student/profile/it/registered/2023")
                 const dataArray = await res.json()
                 console.log("students23 = ",dataArray)
                 setStudentData(dataArray);
