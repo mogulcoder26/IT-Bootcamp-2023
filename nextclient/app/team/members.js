@@ -52,7 +52,7 @@ const  members = [
    {
         "name":"Soubhik Kumar Gon",
         "team":"Frontend,Backend,Cloud",
-        "imgsrc":"https://i.pinimg.com/564x/8b/7a/29/8b7a29940f0f389da0806acb063c3fc7.jpg",
+        "imgsrc":"https://di31z5z4zln8a.cloudfront.net/c17af6d98fef1f6cdaf234ad35873cfc",
     },
 ]
 
