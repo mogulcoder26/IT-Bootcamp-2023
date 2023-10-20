@@ -26,6 +26,7 @@ export default function Page() {
                 setStudentData(dataArray);
             }
             catch (e) {
+                alert("ok")
                 alert(e.message);
             }
         }
@@ -41,19 +42,9 @@ export default function Page() {
                     return(
                         <>
                         <ProfileCard id={key} props={student} />
-                        <ProfileCard id={key} props={student} />
-                        <ProfileCard id={key} props={student} />
-                        <ProfileCard id={key} props={student} />
-                        <ProfileCard id={key} props={student} />
                         </>
                     )
                 })}
-
-                {/* <ProfileCard />
-                <ProfileCard />
-                <ProfileCard />
-                <ProfileCard />
-                <ProfileCard /> */}
             </div>
         </div>
     </>

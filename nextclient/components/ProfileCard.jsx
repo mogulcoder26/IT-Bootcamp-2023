@@ -22,6 +22,7 @@ export default function ProfileCard({ props }) {
           <img
             className=" master__Card absolute m-0 rounded-xl w-full h-full object-cover border-4 border-[#a838a8]"
             src={imgUrl}
+            alt="user-image"
           />
           <div className="master__Card w-full flex flex-col justify-between ml-4 mt-2 font-semibold text-2xl z-10">
             <div>
@@ -44,20 +45,30 @@ export default function ProfileCard({ props }) {
             <h1 style={{ color: "white", margin: "30px",fontSize:"30px"}}>{props.name}</h1>
               <br />
               <div style={{display:"flex",margin:"auto",justifyContent:"space-evenly"}}>
-              <a href="/">
-              <InstagramIcon style={{ fontSize: 50, color:"pink" }} />
-              </a>
-              <a href="/">
-              <LinkedInIcon color="primary" style={{ fontSize: 55}}
-              />
-              </a>
-              <a href="/">
-              <GitHubIcon style={{fontSize:"50px",color:"white"}}/>
-              </a>
+              {
+                props.insta?(
+                  <a href={props.insta}>
+                    <InstagramIcon style={{ fontSize: 50, color:"pink" }} />
+                  </a>
+                ):(null)
+              }
+              {
+                props.github?(
+                  <a href={props.github}>
+                    <GitHubIcon style={{ fontSize: 50, color:"white" }} />
+                  </a>
+                ):(null)
+              }
+              {
+                props.linkedin?(
+                  <a href={props.linkedin}>
+                    <LinkedInIcon color="primary" style={{ fontSize: 50}} />
+                  </a>
+                ):(null)
+              }
               </div>
               <center>
-              <h1 style={{ color: "white",fontSize:"bolder",marginTop: "90px", maxWidth: "80%", textAlign: "center" }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ipsum nihil perferendis sequi, esse rem reprehenderit odio eaque corporis earum saepe eligendi optio nesciunt dolorum est numquam magnam, nemo nulla consequatur mollitia sapiente dolorem!</h1>
-              </center>
+              <h1 style={{ color: "white",fontSize:"bolder",marginTop: "90px", maxWidth: "80%", textAlign: "center" }}>{props.about}</h1>            </center>
           </div>
         </div>
       </ReactCardFlip>

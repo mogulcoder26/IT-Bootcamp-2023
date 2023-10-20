@@ -13,6 +13,7 @@ const Page = () => {
   const [fName, setfName] = useState("");
   const [lName, setLName] = useState("");
   const [about, setAbout] = useState(``);
+  const [insta, setInsta] = useState(``);
   const [id, setId] = useState(``);
   const [studentPic, setstudentPic] = useState(``);
   const [lIN, setlIN] = useState("");
@@ -33,6 +34,7 @@ const Page = () => {
     formData.append("about", `${about}`);
     formData.append("linkedin", `${lIN}`);
     formData.append("github", `${gb}`);
+    formData.append("insta", `${insta}`);
     formData.append("studentPic", studentPic);
     for (const pair of formData.entries()) {
       console.log(pair[0], pair[1]);
@@ -53,7 +55,7 @@ const Page = () => {
     async function checkIfRegistered() {
       try {
         if (ID !== undefined) {
-          const res = await fetch('http://localhost:6969/checkIfRegistered', {
+          const res = await fetch('http://65.0.107.166:6969/checkIfRegistered', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -139,6 +141,13 @@ const Page = () => {
               value={gb}
               onChange={(e) => handleChange(e, setGb)}
             />
+            <input
+              type="text"
+              placeholder="Instagram profile URL"
+              className="p-2 rounded-xl border-2 border-amber-400"
+              value={insta}
+              onChange={(e) => handleChange(e, setInsta)}
+            />
             <button onClick={handleSubmit} className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
               Submit
             </button>
@@ -206,6 +215,13 @@ const Page = () => {
               className="p-2 rounded-xl border-2 border-amber-400"
               value={gb}
               onChange={(e) => handleChange(e, setGb)}
+            />
+            <input
+              type="text"
+              placeholder="Instagram profile URL"
+              className="p-2 rounded-xl border-2 border-amber-400"
+              value={insta}
+              onChange={(e) => handleChange(e, setInsta)}
             />
             <button onClick={handleSubmit} className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
               Submit
