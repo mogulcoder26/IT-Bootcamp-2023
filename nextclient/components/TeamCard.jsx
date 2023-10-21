@@ -1,10 +1,11 @@
 import React from 'react'
+import Image from 'next/image'
 
 const TeamCard = ({name,team,imgsrc}) => {
   return (
     <div className='main__card'>
     <div className='curve'>  
-        <img className='img' src={imgsrc} alt="" />
+        <Image className='img' src={imgsrc} alt="" />
     </div>
     <div className='card'>
             <div className='content'>
