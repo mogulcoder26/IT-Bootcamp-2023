@@ -16,7 +16,7 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
             prev = !prev
           ))
         }} style={{ cursor:"pointer",width: "400px", height: "400px" ,margin:"70px",marginTop:"10px"}} className="master__Card relative w-72 h-72 m-2 flex rounded-xl overflow-hidden">
-          <Image
+          <img
             className=" master__Card absolute m-0 rounded-xl w-full h-full object-cover border-4 border-[#a838a8]"
             src={imgsrc}
             alt=""

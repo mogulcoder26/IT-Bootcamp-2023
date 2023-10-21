@@ -11,7 +11,7 @@ const Profilecard = () => {
                 Name: {session?.user?.name}
                 Email: {session?.user?.email}
                 {session?.user?.image ? (
-                    <Image src={session.user.image} alt="Profile Picture" width={100} height={100} />
+                    <img src={session.user.image} alt="Profile Picture"/>
                 ) : (
                     <p>No profile picture available</p>
                 )}
