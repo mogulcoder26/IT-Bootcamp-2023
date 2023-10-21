@@ -42,7 +42,7 @@ export default function ProfileCard({ props }) {
           setFlip(prev => (
             prev = !prev
           ))
-        }} style={{cursor:"pointer",width: "500px", height: "500px", margin: "auto", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
+        }} style={{cursor:"pointer",width: "350px", height: "450px",margin:"20px", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
           <div className="">
             <h1 style={{ color: "white", margin: "30px",fontSize:"30px"}}>{props.name}</h1>
               <br />
