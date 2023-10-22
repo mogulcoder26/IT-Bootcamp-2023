@@ -4,15 +4,16 @@ import ReactCardFlip from "react-card-flip";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import Image from "next/image";
 export default function ProfileCard({ props }) {
   console.log("p", props)
   const imgUrl = `https://di31z5z4zln8a.cloudfront.net/${props.imageKey}`;
+  const instaUrl = `https://www.instagram.com/${props.insta}`;
+  const linkedinUrl = `https://www.linkedin.com/in/${props.linkedin}`;
+  const githubUrl = `https://github.com/zakhaev26/${props.github}`;
   const Id = props?.id;
   const [flip, setFlip] = useState(false);
   return (
     <>
-
       <ReactCardFlip isFlipped={flip}
         flipDirection="horizontal">
         <div onClick={() => {
@@ -42,35 +43,35 @@ export default function ProfileCard({ props }) {
           setFlip(prev => (
             prev = !prev
           ))
-        }} style={{cursor:"pointer",width: "350px", height: "450px",margin:"20px", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
+        }} style={{cursor:"pointer",width: "350px", height: "450px",margin:"20px",marginBottom:"0px", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
           <div className="">
-            <h1 style={{ color: "white", margin: "30px",fontSize:"30px"}}>{props.name}</h1>
+            <h1 style={{ color: "white", margin: "20px",marginBottom:"0px",fontSize:"30px"}}>{props.name}</h1>
               <br />
-              <div style={{display:"flex",margin:"auto",justifyContent:"space-evenly"}}>
+              <div style={{display:"flex",justifyContent:"space-evenly",marginBottom:"20px"}}>
               {
                 props.insta?(
-                  <a href={props.insta}>
+                  <a href={instaUrl}>
                     <InstagramIcon style={{ fontSize: 50, color:"pink" }} />
                   </a>
                 ):(null)
               }
               {
                 props.github?(
-                  <a href={props.github}>
+                  <a href={githubUrl}>
                     <GitHubIcon style={{ fontSize: 50, color:"white" }} />
                   </a>
                 ):(null)
               }
               {
                 props.linkedin?(
-                  <a href={props.linkedin}>
+                  <a href={linkedinUrl}>
                     <LinkedInIcon color="primary" style={{ fontSize: 50}} />
                   </a>
                 ):(null)
               }
               </div>
               <center>
-              <h1 style={{ color: "white",fontSize:"bolder",marginTop: "90px", maxWidth: "80%", textAlign: "center" }}>{props.about}</h1>            </center>
+              <h1 style={{ color: "white",fontSize:"bolder",marginTop: "10px", maxWidth: "80%", textAlign: "center" }}>{props.about}</h1>            </center>
           </div>
         </div>
       </ReactCardFlip>

@@ -12,7 +12,7 @@ export default function Societies() {
         <h1 className="text-white text-3xl font-bold">Societies</h1>
         <br />
       </center>
-      <div className="container mx-auto flex flex-wrap justify-center">
+      <div className="flex justify-evenly flex-wrap gap-2 m-4">
             {
                 societies.map((soc,ind)=>(
                     <SocietyCard key={ind} {...soc} />

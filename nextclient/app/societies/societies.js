@@ -35,10 +35,37 @@ const societies = [
         "desc": "Have you heard about Sophia and Amazon’s Astro, How do these robots work? What’s the science behind? In the Robotic Society, the aspirations of humanity and the capacities of machines have woven a fabric of existence more vibrant and rich than ever before.",
         "sec": "Madhav Khandelwal",
         "jsec": ["Akshyata Singh","Rohit Kumar Swain"],
-        "imgsrc": "https://media.licdn.com/dms/image/C560BAQGMgyHMQHPQuA/company-logo_200_200/0/1675076962562?e=2147483647&v=beta&t=EcbWKQhgDHMPU-hutq9jxtykPzYkHWeizBiZheyiY4A"
+        "imgsrc": "./photogeeks.png"
+    },
+    {
+        "name": "Vedanta Samiti",
+        "desc": "Have you heard about Sophia and Amazon’s Astro, How do these robots work? What’s the science behind? In the Robotic Society, the aspirations of humanity and the capacities of machines have woven a fabric of existence more vibrant and rich than ever before.",
+        "sec": "Madhav Khandelwal",
+        "jsec": ["Akshyata Singh","Rohit Kumar Swain"],
+        "imgsrc": "./vedantas.jpeg"
+    },
+    {
+        "name": "NAPS",
+        "desc": "Have you heard about Sophia and Amazon’s Astro, How do these robots work? What’s the science behind? In the Robotic Society, the aspirations of humanity and the capacities of machines have woven a fabric of existence more vibrant and rich than ever before.",
+        "sec": "Madhav Khandelwal",
+        "jsec": ["Akshyata Singh","Rohit Kumar Swain"],
+        "imgsrc": "./naps.jpg"
+    },
+    {
+        "name": "Sports Society",
+        "desc": "Have you heard about Sophia and Amazon’s Astro, How do these robots work? What’s the science behind? In the Robotic Society, the aspirations of humanity and the capacities of machines have woven a fabric of existence more vibrant and rich than ever before.",
+        "sec": "Madhav Khandelwal",
+        "jsec": ["Akshyata Singh","Rohit Kumar Swain"],
+        "imgsrc": "./sportssoc.jpg"
+    },
+    {
+        "name": "NAPS",
+        "desc": "Have you heard about Sophia and Amazon’s Astro, How do these robots work? What’s the science behind? In the Robotic Society, the aspirations of humanity and the capacities of machines have woven a fabric of existence more vibrant and rich than ever before.",
+        "sec": "Madhav Khandelwal",
+        "jsec": ["Akshyata Singh","Rohit Kumar Swain"],
+        "imgsrc": "./ecell.jpg"
     }
 
-    
 ]
 
 export default societies

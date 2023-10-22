@@ -15,7 +15,7 @@ export default function Page() {
                 setStudentData(dataArray);
             }
             catch (e) {
-                alert(e.message);
+                console.log(e.message);
             }
         }
         fetchData()
@@ -24,7 +24,6 @@ export default function Page() {
     return(
         <>
         <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold text-transparent flex justify-center">Profiles</h1>
-        {console.log(studentData)}
         <div className="">
             <div className="flex justify-evenly flex-wrap gap-2 m-4">
                 
@@ -33,12 +32,6 @@ export default function Page() {
                         <ProfileCard key={key} props={student} />
                     )
                 })}
-
-                {/* <ProfileCard />
-                <ProfileCard />
-                <ProfileCard />
-                <ProfileCard />
-                <ProfileCard /> */}
             </div>
         </div>
     </>

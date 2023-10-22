@@ -2,14 +2,15 @@
 
 import ProfileCard from "@/components/ProfileCard";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
-
+import { SnackbarProvider, enqueueSnackbar } from "notistack";
+import { useEffect, useRef, useState } from "react";
 const Page = () => {
-
   const { data: session } = useSession()
   console.log("ud", session)
   const ID = 'B' + session?.user?.email.slice(1, 7);
-
+  const successRef = useRef(null);
+  const errorRef = useRef(null);
+  const characterLimit = 270;
   const [fName, setfName] = useState("");
   const [about, setAbout] = useState(``);
   const [insta, setInsta] = useState(``);
@@ -20,8 +21,16 @@ const Page = () => {
   const [registered, setRegistered] = useState("");
 
   function handleChange(event, setter) {
+    if (setter === setAbout) {
+      let value = event.target.value
+      if (value.length <= characterLimit) {
+        setAbout(value);
+      }
+      else {
+        return;
+      }
+    }
     setter(event.target.value);
-    console.log(fName)
   }
 
   async function handleSubmit() {
@@ -44,9 +53,14 @@ const Page = () => {
         method: "POST",
         body: formData,
       })
-      alert("DONE!");
+
+      if (res) {
+        successRef.current.click();
+        return;
+      }
     } catch (e) {
-      alert(e.message)
+      console.log(e.message);
+      errorRef.current.click();
     }
   }
 
@@ -70,9 +84,12 @@ const Page = () => {
         method: "POST",
         body: formData,
       })
-      alert("DONE!");
+      if (res) {
+        successRef.current.click();
+      }
     } catch (e) {
-      alert(e.message)
+      console.log("err: ", e.message)
+      errorRef.current.click()
     }
   }
 
@@ -91,10 +108,10 @@ const Page = () => {
           })
           const data = await res.json()
           if (data.registered === undefined || data.registered === false) {
-            console.log("Registered nahi hai");
+            console.log("Not Registered");
           }
           else {
-            console.log("Registered hai",data.user[0]);
+            console.log("Registered hai", data.user[0]);
             setRegistered(data.user[0]);
             setfName(data.user[0].name);
             setAbout(data.user[0].about);
@@ -107,27 +124,25 @@ const Page = () => {
         console.log(e.message);
       }
     }
-    checkIfRegistered()
+    checkIfRegistered();
   }, [ID])
 
 
   return (
     registered ? (
-    <center>
-    <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">You are Registered!</h1>
-    <ProfileCard  props={registered} />
-    <div className="flex justify-center h-screen items-center gap-4">
+      <center>
+        <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">You are Registered!</h1>
+        <ProfileCard props={registered} />
+        <div className="flex justify-center h-screen items-center gap-4">
           <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
-            <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Wanna Update?</h1>
-            <div className="flex justify-center gap-4">
-              <input
-                type="text"
-                placeholder="Name"
-                className="p-2 rounded-xl border-2 border-amber-400"
-                value={fName}
-                onChange={(e) => handleChange(e, setfName)}
-              />
-            </div>
+            <h1 className=" p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Wanna Update?</h1>
+            <input
+              type="text"
+              placeholder="Name"
+              className="p-2 rounded-xl border-2 border-amber-400"
+              value={fName}
+              onChange={(e) => handleChange(e, setfName)}
+            />
             <input
               type="text"
               placeholder="College ID"
@@ -141,6 +156,7 @@ const Page = () => {
               className="bg-amber-100 p-2 rounded-xl border-2 border-amber-400"
               onChange={(e) => { setstudentPic(e.target.files[0]) }}
             />
+
             <textarea
               name="about"
               rows="4"
@@ -150,6 +166,7 @@ const Page = () => {
               value={about}
               onChange={(e) => handleChange(e, setAbout)}
             ></textarea>
+            <p style={{ color: "white" }}>{characterLimit - about.length} characters remaining</p>
             <input
               type="text"
               placeholder="LinkedIn profile URL (if any)"
@@ -171,26 +188,33 @@ const Page = () => {
               value={insta}
               onChange={(e) => handleChange(e, setInsta)}
             />
-            <button onClick={handleUpdate} className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
+            <SnackbarProvider />
+            <button
+              onClick={() => {
+                enqueueSnackbar('Updating,Dont Switch!');
+                handleUpdate()
+              }}
+              className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
               Update!
             </button>
           </form>
+          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}>REF</button>
+
+          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}>REF</button>
         </div>
-    </center>
+      </center>
     ) : (
       <>
         <div className="flex justify-center h-screen items-center gap-4">
           <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
             <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Register</h1>
-            <div className="flex justify-center gap-4">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="p-2 rounded-xl border-2 border-amber-400"
-                value={fName}
-                onChange={(e) => handleChange(e, setfName)}
-              />
-            </div>
+            <input
+              type="text"
+              placeholder="First Name"
+              className="p-2 rounded-xl border-2 border-amber-400"
+              value={fName}
+              onChange={(e) => handleChange(e, setfName)}
+            />
             <input
               type="text"
               placeholder="College ID"
@@ -235,10 +259,16 @@ const Page = () => {
               value={insta}
               onChange={(e) => handleChange(e, setInsta)}
             />
-            <button onClick={handleSubmit} className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
+            <button onClick={() => {
+              handleSubmit();
+              enqueueSnackbar("Uploading Profile to Server...");
+            }} className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
               Submit
             </button>
           </form>
+          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}>REF</button>
+
+          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}>REF</button>
         </div>
       </>
     )

@@ -24,7 +24,7 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
           <div className="master__Card w-full flex flex-col justify-between ml-4 mt-2 font-semibold text-2xl z-10">
 
             <div className="font-bold text-white text-2xl mb-2 z-10">
-              <h1 style={{color:'black'}}>{name}</h1>
+              <h1 style={{color:'white'}}>{name}</h1>
             </div>
           </div>
         </div>
@@ -33,9 +33,9 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
           setFlip(prev => (
             prev = !prev
           ))
-        }} style={{cursor:"pointer",width: "450px", height: "500px", margin: "auto", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
+        }} style={{cursor:"pointer",width: "450px", height: "500px", margin: "30px",transition:"0.6s",textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
           <div >
-            <h1 style={{ color: "white", margin: "30px",fontSize:"30px"}}>Tech Soc</h1>
+            <h1 style={{ color: "white", margin: "30px",fontSize:"30px"}}>{name}</h1>
               <br />
               <div style={{display:"flex",margin:"auto",justifyContent:"space-evenly"}}>
               </div>

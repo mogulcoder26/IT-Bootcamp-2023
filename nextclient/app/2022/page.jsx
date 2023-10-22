@@ -22,12 +22,9 @@ export default function Page() {
                         }
                         return 0;
                 })
-                console.log("sorted arr ::",dataArray);
                 setStudentData(dataArray);
             }
             catch (e) {
-                alert("ok")
-                alert(e.message);
             }
         }
         fetchData()
