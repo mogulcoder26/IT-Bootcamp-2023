@@ -9,7 +9,7 @@ export default function ProfileCard({ props }) {
   const imgUrl = `https://di31z5z4zln8a.cloudfront.net/${props.imageKey}`;
   const instaUrl = `https://www.instagram.com/${props.insta}`;
   const linkedinUrl = `https://www.linkedin.com/in/${props.linkedin}`;
-  const githubUrl = `https://github.com/zakhaev26/${props.github}`;
+  const githubUrl = `https://github.com/${props.github}`;
   const Id = props?.id;
   const [flip, setFlip] = useState(false);
   return (

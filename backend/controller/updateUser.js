@@ -37,8 +37,7 @@ async function updateUser(req, res) {
             );
             console.log(updateU)
             console.log("User updated successfully!");
-            res.send("Done")
-
+            res.send(updateU);
         } catch (e) {
             console.log("err in createHomie = ", e.message);
             throw new Error(e.message);

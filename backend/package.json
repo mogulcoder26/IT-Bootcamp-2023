@@ -29,6 +29,8 @@
   "homepage": "https://github.com/mogulcoder26/IT-Bootcamp-2023#readme",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.417.0",
+    "@coreui/coreui": "^5.0.0-alpha.3",
+    "@coreui/react": "^5.0.0-alpha.3",
     "aws-sdk": "^2.1438.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

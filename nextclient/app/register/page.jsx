@@ -6,7 +6,6 @@ import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import { useEffect, useRef, useState } from "react";
 const Page = () => {
   const { data: session } = useSession()
-  console.log("ud", session)
   const ID = 'B' + session?.user?.email.slice(1, 7);
   const successRef = useRef(null);
   const errorRef = useRef(null);
@@ -14,7 +13,6 @@ const Page = () => {
   const [fName, setfName] = useState("");
   const [about, setAbout] = useState(``);
   const [insta, setInsta] = useState(``);
-  const [id, setId] = useState(``);
   const [studentPic, setstudentPic] = useState(``);
   const [lIN, setlIN] = useState("");
   const [gb, setGb] = useState("");
@@ -37,26 +35,26 @@ const Page = () => {
     const formData = new FormData();
 
     formData.append("name", `${fName}`);
-    formData.append("email", `${id}@iiit-bh.ac.in`);
-    formData.append("id", `${id}`);
+    formData.append("email", `${ID}@iiit-bh.ac.in`);
+    formData.append("id", `${ID}`);
     formData.append("about", `${about}`);
     formData.append("linkedin", `${lIN}`);
     formData.append("github", `${gb}`);
     formData.append("insta", `${insta}`);
     formData.append("studentPic", studentPic);
+    
     for (const pair of formData.entries()) {
       console.log(pair[0], pair[1]);
     }
 
     try {
-      const res = await fetch('https://bootcamp-server.onrender.com/register/profile/it/securev0', {
+      let res = await fetch('https://bootcamp-server.onrender.com/register/profile/it/securev0', {
         method: "POST",
         body: formData,
       })
 
       if (res) {
-        successRef.current.click();
-        return;
+        enqueueSnackbar('Successfully Registered Profile...!');
       }
     } catch (e) {
       console.log(e.message);
@@ -68,7 +66,7 @@ const Page = () => {
     const formData = new FormData();
 
     formData.append("name", `${fName}`);
-    formData.append("email", `${id}@iiit-bh.ac.in`);
+    formData.append("email", `${ID}@iiit-bh.ac.in`);
     formData.append("id", `${ID}`);
     formData.append("about", `${about}`);
     formData.append("linkedin", `${lIN}`);
@@ -85,7 +83,7 @@ const Page = () => {
         body: formData,
       })
       if (res) {
-        successRef.current.click();
+        enqueueSnackbar('Successfully Updated Profile...!');
       }
     } catch (e) {
       console.log("err: ", e.message)
@@ -166,6 +164,7 @@ const Page = () => {
               value={about}
               onChange={(e) => handleChange(e, setAbout)}
             ></textarea>
+            
             <p style={{ color: "white" }}>{characterLimit - about.length} characters remaining</p>
             <input
               type="text"
@@ -198,9 +197,9 @@ const Page = () => {
               Update!
             </button>
           </form>
-          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}>REF</button>
+          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}></button>
 
-          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}>REF</button>
+          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}></button>
         </div>
       </center>
     ) : (
@@ -219,8 +218,7 @@ const Page = () => {
               type="text"
               placeholder="College ID"
               className="p-2 rounded-xl border-2 border-amber-400"
-              value={id}
-              onChange={(e) => handleChange(e, setId)}
+              value={ID}
             />
             <input
               type="file"
@@ -259,16 +257,16 @@ const Page = () => {
               value={insta}
               onChange={(e) => handleChange(e, setInsta)}
             />
+            <SnackbarProvider />
             <button onClick={() => {
-              handleSubmit();
               enqueueSnackbar("Uploading Profile to Server...");
+              handleSubmit();
             }} className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
               Submit
             </button>
           </form>
-          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}>REF</button>
-
-          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}>REF</button>
+          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}></button>
+          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}></button>
         </div>
       </>
     )
