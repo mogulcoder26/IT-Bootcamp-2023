@@ -1,9 +1,11 @@
 "use client";
 
 import ProfileCard from "@/components/ProfileCard";
+import { TextField } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import { useEffect, useRef, useState } from "react";
+import "./reg.css"
 const Page = () => {
   const { data: session } = useSession()
   const ID = 'B' + session?.user?.email.slice(1, 7);
@@ -17,7 +19,6 @@ const Page = () => {
   const [lIN, setlIN] = useState("");
   const [gb, setGb] = useState("");
   const [registered, setRegistered] = useState("");
-
   function handleChange(event, setter) {
     if (setter === setAbout) {
       let value = event.target.value
@@ -42,7 +43,7 @@ const Page = () => {
     formData.append("github", `${gb}`);
     formData.append("insta", `${insta}`);
     formData.append("studentPic", studentPic);
-    
+
     for (const pair of formData.entries()) {
       console.log(pair[0], pair[1]);
     }
@@ -55,6 +56,12 @@ const Page = () => {
 
       if (res) {
         enqueueSnackbar('Successfully Registered Profile...!');
+        if (ID[3] === 2) {
+          router.push('/2022');
+        }
+        else if (ID[3] === 3) {
+          router.push('/2023');
+        }
       }
     } catch (e) {
       console.log(e.message);
@@ -164,7 +171,7 @@ const Page = () => {
               value={about}
               onChange={(e) => handleChange(e, setAbout)}
             ></textarea>
-            
+
             <p style={{ color: "white" }}>{characterLimit - about.length} characters remaining</p>
             <input
               type="text"
@@ -204,56 +211,62 @@ const Page = () => {
       </center>
     ) : (
       <>
-        <div className="flex justify-center h-screen items-center gap-4">
-          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
+      <br /><br />
+        <div className="max_C flex justify-center h-screen items-center gap-4">
+          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4" style={{ width: "100%", padding: "0 20px" }}>
             <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Register</h1>
-            <input
-              type="text"
-              placeholder="First Name"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={fName}
-              onChange={(e) => handleChange(e, setfName)}
+            <TextField value={fName}
+              onChange={(e) => handleChange(e, setfName)} fullWidth label="Enter Your Name" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
             />
-            <input
-              type="text"
-              placeholder="College ID"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={ID}
-            />
+            <TextField
+              value={ID} fullWidth label="Your ID" id="fullWidth"
+              InputProps={{
+                style: { color: 'white' },
+              }}
+              color="secondary" focused />
+              <label style={{ color: "white",margin:"0"}}>
+              Upload Your Pic!
+              </label>
             <input
               type="file"
               accept="image/*"
               placeholder="Upload Your Pic!"
-              className="bg-amber-100 p-2 rounded-xl border-2 border-amber-400"
+              className="p-2 rounded-xl border-2 border-purple"
               onChange={(e) => { setstudentPic(e.target.files[0]) }}
             />
-            <textarea
-              name="about"
-              rows="4"
-              cols="50"
-              placeholder="About"
-              className="p-2 rounded-xl border-2 border-amber-400 resize-none"
+            <TextField
+              id="outlined-multiline-static"
+              label="About"
+              multiline
+              color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
               value={about}
               onChange={(e) => handleChange(e, setAbout)}
-            ></textarea>
-            <input
-              type="text"
-              placeholder="LinkedIn profile URL (if any)"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={lIN}
-              onChange={(e) => handleChange(e, setlIN)}
+              rows={4}
             />
-            <input
-              type="text"
-              placeholder="Github profile URL"
-              className="p-2 rounded-xl border-2 border-amber-400"
+            <p style={{ color: "white", textAlign: "center" }}>{characterLimit - about.length} characters remaining</p>
+            <TextField value={lIN}
+              onChange={(e) => handleChange(e, setlIN)} fullWidth label="Enter LinkedIn Username" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
+            />
+            <TextField fullWidth label="Enter Github Username" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
               value={gb}
               onChange={(e) => handleChange(e, setGb)}
             />
-            <input
-              type="text"
-              placeholder="Instagram profile URL"
-              className="p-2 rounded-xl border-2 border-amber-400"
+            <TextField fullWidth label="Enter Github Username" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
               value={insta}
               onChange={(e) => handleChange(e, setInsta)}
             />
@@ -268,6 +281,7 @@ const Page = () => {
           <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}></button>
           <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}></button>
         </div>
+        <br /><br />
       </>
     )
 

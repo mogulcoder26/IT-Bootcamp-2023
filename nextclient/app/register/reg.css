@@ -1,0 +1,10 @@
+.max_C {
+    max-width: 60%;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .max_C {
+        max-width: 100%;
+    }
+}
