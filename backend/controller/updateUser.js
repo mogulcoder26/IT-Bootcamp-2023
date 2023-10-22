@@ -13,7 +13,6 @@ async function updateUser(req, res) {
                 console.log("imageKey : ", uploadedImageKey);
                 imageKey = uploadedImageKey;
             }
-
             const user = {
                 name,
                 email,
@@ -38,12 +37,15 @@ async function updateUser(req, res) {
             );
             console.log(updateU)
             console.log("User updated successfully!");
-            res.redirect("http://localhost/2022")
+            res.send("Done")
+
         } catch (e) {
             console.log("err in createHomie = ", e.message);
+            throw new Error(e.message);
         }
     } catch (e) {
         console.log(e.message);
+        throw new Error(e.message);
     }
 }
 
