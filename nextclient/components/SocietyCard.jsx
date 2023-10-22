@@ -33,7 +33,7 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
           setFlip(prev => (
             prev = !prev
           ))
-        }} style={{cursor:"pointer",width: "500px", height: "500px", margin: "auto", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
+        }} style={{cursor:"pointer",width: "450px", height: "500px", margin: "auto", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
           <div >
             <h1 style={{ color: "white", margin: "30px",fontSize:"30px"}}>Tech Soc</h1>
               <br />
