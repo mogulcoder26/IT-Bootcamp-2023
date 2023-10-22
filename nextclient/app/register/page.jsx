@@ -135,83 +135,14 @@ const Page = () => {
 
   return (
     registered ? (
-      <center>
-        <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">You are Registered!</h1>
-        <ProfileCard props={registered} />
-        <div className="flex justify-center h-screen items-center gap-4">
-          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
-            <h1 className=" p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Wanna Update?</h1>
-            <input
-              type="text"
-              placeholder="Name"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={fName}
-              onChange={(e) => handleChange(e, setfName)}
-            />
-            <input
-              type="text"
-              placeholder="College ID"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={ID}
-            />
-            <input
-              type="file"
-              accept="image/*"
-              placeholder="Upload Your Pic!"
-              className="bg-amber-100 p-2 rounded-xl border-2 border-amber-400"
-              onChange={(e) => { setstudentPic(e.target.files[0]) }}
-            />
-
-            <textarea
-              name="about"
-              rows="4"
-              cols="50"
-              placeholder="About"
-              className="p-2 rounded-xl border-2 border-amber-400 resize-none"
-              value={about}
-              onChange={(e) => handleChange(e, setAbout)}
-            ></textarea>
-
-            <p style={{ color: "white" }}>{characterLimit - about.length} characters remaining</p>
-            <input
-              type="text"
-              placeholder="LinkedIn profile URL (if any)"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={lIN}
-              onChange={(e) => handleChange(e, setlIN)}
-            />
-            <input
-              type="text"
-              placeholder="Github profile URL"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={gb}
-              onChange={(e) => handleChange(e, setGb)}
-            />
-            <input
-              type="text"
-              placeholder="Instagram profile URL"
-              className="p-2 rounded-xl border-2 border-amber-400"
-              value={insta}
-              onChange={(e) => handleChange(e, setInsta)}
-            />
-            <SnackbarProvider />
-            <button
-              onClick={() => {
-                enqueueSnackbar('Updating,Dont Switch!');
-                handleUpdate()
-              }}
-              className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
-              Update!
-            </button>
-          </form>
-          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}></button>
-
-          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}></button>
-        </div>
-      </center>
-    ) : (
       <>
-      <br /><br />
+        
+        <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">You are Registered!</h1>
+        <center>
+        <ProfileCard props={registered} style={{margin:"40px"}}/>
+        <br />
+        <br />
+        </center>
         <div className="max_C flex justify-center h-screen items-center gap-4">
           <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4" style={{ width: "100%", padding: "0 20px" }}>
             <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Register</h1>
@@ -227,9 +158,83 @@ const Page = () => {
                 style: { color: 'white' },
               }}
               color="secondary" focused />
-              <label style={{ color: "white",margin:"0"}}>
+            <label style={{ color: "white", margin: "0" }}>
               Upload Your Pic!
-              </label>
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              placeholder="Upload Your Pic!"
+              className="p-2 rounded-xl border-2 border-purple"
+              onChange={(e) => { setstudentPic(e.target.files[0]) }}
+            />
+            <TextField
+              id="outlined-multiline-static"
+              label="About"
+              multiline
+              color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
+              value={about}
+              onChange={(e) => handleChange(e, setAbout)}
+              rows={4}
+            />
+            <p style={{ color: "white", textAlign: "center" }}>{characterLimit - about.length} characters remaining</p>
+            <TextField value={lIN}
+              onChange={(e) => handleChange(e, setlIN)} fullWidth label="Enter LinkedIn Username" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
+            />
+            <TextField fullWidth label="Enter Github Username" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
+              value={gb}
+              onChange={(e) => handleChange(e, setGb)}
+            />
+            <TextField fullWidth label="Enter Github Username" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
+              value={insta}
+              onChange={(e) => handleChange(e, setInsta)}
+            />
+            <SnackbarProvider />
+            <button onClick={() => {
+              enqueueSnackbar("Updating Profile to Server...");
+              handleUpdate();
+            }} className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 p-2 rounded-xl text-white font-semibold text-lg hover:border-2 border-amber-400">
+              Submit
+            </button>
+          </form>
+          <button style={{ display: "none" }} ref={successRef} onClick={() => enqueueSnackbar('Successfully Updated Profile...!')}></button>
+          <button style={{ display: "none" }} ref={errorRef} onClick={() => enqueueSnackbar('Something Went wrong')}></button>
+        </div>
+        <br /><br />
+      </>
+    ) : (
+      <>
+        <br /><br />
+        <div className="max_C flex justify-center h-screen items-center gap-4">
+          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4" style={{ width: "100%", padding: "0 20px" }}>
+            <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold font-serif text-transparent flex justify-center">Register</h1>
+            <TextField value={fName}
+              onChange={(e) => handleChange(e, setfName)} fullWidth label="Enter Your Name" id="fullWidth" color="secondary" focused
+              InputProps={{
+                style: { color: 'white' },
+              }}
+            />
+            <TextField
+              value={ID} fullWidth label="Your ID" id="fullWidth"
+              InputProps={{
+                style: { color: 'white' },
+              }}
+              color="secondary" focused />
+            <label style={{ color: "white", margin: "0" }}>
+              Upload Your Pic!
+            </label>
             <input
               type="file"
               accept="image/*"
