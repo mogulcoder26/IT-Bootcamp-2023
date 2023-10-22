@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Appbar from "../components/Appbar";
 import Providers from "../components/Providers";
 import { Inter } from "next/font/google";
 
@@ -14,14 +13,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
       </head>
       <body className={inter.className}>
         <Providers>
           <Navbar />
           {children}
         </Providers>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
       </body>
     </html>
   );
