@@ -1,5 +1,6 @@
 "use client"
 import { useEffect } from 'react'
+
 const Card = ({name,email,phone,bio}) => {
 
     return (

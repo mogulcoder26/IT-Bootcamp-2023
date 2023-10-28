@@ -5,9 +5,13 @@ import { TextField } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import { useEffect, useRef, useState } from "react";
-import "./reg.css"
+import "./register.css"
+
+
 const Page = () => {
+
   const { data: session } = useSession()
+
   const ID = 'B' + session?.user?.email.slice(1, 7);
   const successRef = useRef(null);
   const errorRef = useRef(null);
@@ -19,6 +23,7 @@ const Page = () => {
   const [lIN, setlIN] = useState("");
   const [gb, setGb] = useState("");
   const [registered, setRegistered] = useState("");
+  
   function handleChange(event, setter) {
     if (setter === setAbout) {
       let value = event.target.value

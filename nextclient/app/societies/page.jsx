@@ -1,7 +1,7 @@
 import SocietyCard from "@/components/SocietyCard";
 import Card from "../../components/Cardx";
 import Navbar from "../../components/Navbar";
-import "./style.css";
+import "./societies.css";
 import societies from "./societies"
 
 export default function Societies() {

@@ -1,7 +1,8 @@
 import React from "react";
-import "./styles.css";
+import "./team.css";
 import TeamCard from "@/components/TeamCard";
 import members from "./members";
+
 const page = () => {
   return (
     <>

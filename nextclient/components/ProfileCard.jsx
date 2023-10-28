@@ -1,4 +1,4 @@
-import "./pc.css"
+import "./profilecard.css"
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import InstagramIcon from '@mui/icons-material/Instagram';

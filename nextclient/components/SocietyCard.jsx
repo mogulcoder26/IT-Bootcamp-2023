@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import "./soc.css";
+import "./societycard.css";
 import ReactCardFlip from 'react-card-flip';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Image from 'next/image';
