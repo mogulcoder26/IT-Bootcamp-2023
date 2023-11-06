@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} style={{backgroundImage:`url(./Asset1.png)`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}>
         <Providers>
           <Navbar />
           {children}
