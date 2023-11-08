@@ -4,7 +4,7 @@ import FaviconCR from "../components/FaviconCR"
 import Footer from "../components/Footer"
 import image from "./images"
 import { useState } from "react"
-
+import "./ms.css"
 export default function HomePage() {
 
     const [index, setIndex] = useState(0)
@@ -36,7 +36,7 @@ export default function HomePage() {
     return (
         <>
             <div className="justify-center">
-            <h1 className="mt-1 p-2  bg-clip-text text-3xl font-bold tracking-tighter text-transparent sm:text-5xl lg:text-5xl flex justify-center">Welcome to Information Technology</h1>
+            <h1 className="zpp mt-1 p-2  bg-clip-text text-3xl font-bold tracking-tighter text-transparent sm:text-5xl lg:text-5xl flex justify-center">Welcome to Information Technology</h1>
             <br /><br />
             <motion.div 
                 initial={{translateY: 15}}
