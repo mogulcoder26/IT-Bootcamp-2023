@@ -15,7 +15,7 @@ export default function ProfileCard({ props }) {
   const [flip, setFlip] = useState(false);
   return (
     <>
-    <h1 style={{color:white}}>HELLO WORLD</h1>
+    {/* <h1 style={{color:white}}>HELLO WORLD</h1> */}
     {/* <div className="card">
     <div className="poster">
         <img src="public\sarb.PNG" alt=""/>
