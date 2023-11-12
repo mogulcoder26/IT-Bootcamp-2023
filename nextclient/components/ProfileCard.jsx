@@ -16,7 +16,7 @@ export default function ProfileCard({ props }) {
   return (
     <>
     {/* <h1 style={{color:white}}>HELLO WORLD</h1> */}
-    {/* <div className="bgcard"> */}
+    <div className="bgcard">
     <div className="card">
     <div className="poster">
     <img
@@ -39,7 +39,7 @@ export default function ProfileCard({ props }) {
     </ul>
     </div>
 </div>
-{/* </div> */}
+</div>
 
 {/* <div className="bgcard"> 
 <div className="card">
