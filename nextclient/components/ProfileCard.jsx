@@ -16,17 +16,56 @@ export default function ProfileCard({ props }) {
   return (
     <>
     {/* <h1 style={{color:white}}>HELLO WORLD</h1> */}
-    {/* <div className="card">
+    {/* <div className="bgcard"> */}
+    <div className="card">
     <div className="poster">
-        <img src="public\sarb.PNG" alt=""/>
+    <img
+            loading="lazy"
+            className=" master__Card absolute m-0 rounded-xl w-full h-full object-cover  border-[#a838a8]"
+            src={imgUrl}
+            alt="user-image"
+          />
     </div> 
     <div className="details">
-        <h1 style="font-size: 30px;">Sarbojeet</h1>
-        <h3 style="font-size: 30px;">B422051</h3>
-        <div className="text" style="bottom:-140px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque voluptates a, aspernatur eos suscipit dolorem, veritatis mollitia officiis optio </div>
+    <div className="name">{props.name}</div>
+        <div className="id">{typeof (Id) === 'string' ? Id[0]+Id[1]+Id[2]+Id[3]+Id[4]+Id[5] + Id[6] : null}</div>
+        <div className="desc" style={{bottom:"-100px",paddingTop:"1rem",fontSize:"1rem"}}>{props.about} </div>
     </div>
-</div> */}
-      <ReactCardFlip isFlipped={flip}
+    <div className="socials">
+            <ul>
+        <a href=""><i className="fa-brands fa-instagram fa-2xl" style={{color: "#dfe0e1"}}></i></a>
+        <a href=""><i className="fa-brands fa-linkedin fa-2xl" style={{color: "#dfe0e1"}}></i></a>
+        <a href=""><i className="fa-brands fa-github fa-2xl" style={{color: "#dfe0e1"}}></i></a>
+    </ul>
+    </div>
+</div>
+{/* </div> */}
+
+{/* <div className="bgcard"> 
+<div className="card">
+    <div className="poster">
+        <img src="amit.PNG" alt=""/>
+    </div> 
+    <div className="details">
+        <div className="name">{props.name}</div>
+        <div className="id">{props.Id}</div>
+        <div className="desc" style={{bottom:"-140px",paddingTop:"1rem",fontSize:"1rem"}}>{props.about} </div>
+        <div className="socials">
+            <ul>
+        <a href=""><i className="fa-brands fa-instagram fa-2xl" style={{color: "#dfe0e1"}}></i></a>
+        <a href=""><i className="fa-brands fa-linkedin fa-2xl" style={{color: "#dfe0e1"}}></i></a>
+        <a href=""><i className="fa-brands fa-github fa-2xl" style={{color: "#dfe0e1"}}></i></a>
+    </ul>
+    </div>
+    </div>
+</div>
+</div>  */}
+
+
+
+
+
+      {/* <ReactCardFlip isFlipped={flip}
         flipDirection="horizontal">
         <div onClick={() => {
           setFlip(prev => (
@@ -86,7 +125,7 @@ export default function ProfileCard({ props }) {
               <h1 style={{ color: "white",fontSize:"bolder",marginTop: "10px", maxWidth: "80%", textAlign: "center" }}>{props.about}</h1>            </center>
           </div>
         </div>
-      </ReactCardFlip>
+      </ReactCardFlip> */}
     </>
   );
 }
