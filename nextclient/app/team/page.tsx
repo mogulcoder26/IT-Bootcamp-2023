@@ -6,6 +6,7 @@ import members from "./members";
 const page = () => {
   return (
     <>
+    <center><text style={{color:"white",fontSize:"25px",}}>OUR CONSORTIUM</text></center>
       <div className="container mx-auto">
         <TeamCard {...members[0]} />
         <TeamCard {...members[1]} />

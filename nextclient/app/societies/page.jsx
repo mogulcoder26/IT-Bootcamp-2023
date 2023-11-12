@@ -7,7 +7,8 @@ import societies from "./societies"
 export default function Societies() {
   return (
     <>
-      <center>
+    
+    <center>
         <br />
         <h1 className="text-white text-3xl font-bold">Societies</h1>
         <br />
@@ -19,6 +20,7 @@ export default function Societies() {
                 ))
             }
       </div>
+      
     </>
   );
 }

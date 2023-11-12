@@ -4,6 +4,7 @@ import ReactCardFlip from "react-card-flip";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { color } from "framer-motion";
 export default function ProfileCard({ props }) {
   console.log("p", props)
   const imgUrl = `https://di31z5z4zln8a.cloudfront.net/${props.imageKey}`;
@@ -14,6 +15,17 @@ export default function ProfileCard({ props }) {
   const [flip, setFlip] = useState(false);
   return (
     <>
+    {/* <h1 style={{color:white}}>HELLO WORLD</h1> */}
+    {/* <div className="card">
+    <div className="poster">
+        <img src="public\sarb.PNG" alt=""/>
+    </div> 
+    <div className="details">
+        <h1 style="font-size: 30px;">Sarbojeet</h1>
+        <h3 style="font-size: 30px;">B422051</h3>
+        <div className="text" style="bottom:-140px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque voluptates a, aspernatur eos suscipit dolorem, veritatis mollitia officiis optio </div>
+    </div>
+</div> */}
       <ReactCardFlip isFlipped={flip}
         flipDirection="horizontal">
         <div onClick={() => {
