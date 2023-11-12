@@ -8,7 +8,7 @@ const SocietyCard = ({name,desc,sec,jsec,imgsrc,insta}) => {
     const [flip, setFlip] = useState(false);
 
     return (
-      <div className="cards mt-5  flex-1/3 mx-[2rem] my-[5rem]">
+      <div style={{margin:"40px"}} className="cards mt-5  flex-1/3 mx-[2rem] my-[5rem]">
                     <div className="content w-full p-5">
                       <img src={imgsrc} alt="" class="image"/>
                         <div className="soc-name">{name}</div>

@@ -52,7 +52,7 @@ const Page = () => {
 
     try {
       let res = await fetch(
-        "https://bootcamp-server.onrender.com/register/profile/it/securev0",
+        "https://43.204.148.177:6969/register/profile/it/securev0",
         {
           method: "POST",
           body: formData,

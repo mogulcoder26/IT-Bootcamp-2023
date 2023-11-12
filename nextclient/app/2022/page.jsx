@@ -9,7 +9,7 @@ export default function Page() {
 
         const fetchData = async () => {
             try {
-                const res = await fetch("https://bootcamp-server.onrender.com/student/profile/it/registered/2022")
+                const res = await fetch("https://43.204.148.177:6969/student/profile/it/registered/2022")
                 let dataArray = await res.json()
 
                 dataArray = await dataArray.sort((a, b) => {
@@ -34,7 +34,7 @@ export default function Page() {
     }, [])
     return (
         <>
-            <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold text-transparent flex justify-center">Profiles</h1>
+            <h1 className="mt-1 p-2 bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-4xl font-bold text-transparent flex justify-center">Profiles/2022</h1>
             <div className="">
                 <div className="flex justify-evenly flex-wrap gap-2 m-4">
 
