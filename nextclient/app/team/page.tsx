@@ -6,7 +6,10 @@ import members from "./members";
 const page = () => {
   return (
     <>
-    <center><text style={{color:"white",fontSize:"25px",}}>OUR CONSORTIUM</text></center>
+    <center>
+    <h1 className='bg-gradient-to-tr text-4xl mt-5 from-green-300 via-blue-500 to-purple-600 bg-clip-text font-bold text-transparent' >The Team</h1>
+    <h1 className='bg-gradient-to-tr text-xl mt-2 from-green-300 via-blue-500 to-purple-600 bg-clip-text font-bold text-transparent' > Behind this Site</h1>
+    </center>
       <div className="container mx-auto">
         <TeamCard {...members[0]} />
         <TeamCard {...members[1]} />

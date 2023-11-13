@@ -15,17 +15,6 @@ export default function ProfileCard({ props }) {
   const [flip, setFlip] = useState(false);
   return (
     <>
-    {/* <h1 style={{color:white}}>HELLO WORLD</h1> */}
-    {/* <div className="card">
-    <div className="poster">
-        <img src="public\sarb.PNG" alt=""/>
-    </div> 
-    <div className="details">
-        <h1 style="font-size: 30px;">Sarbojeet</h1>
-        <h3 style="font-size: 30px;">B422051</h3>
-        <div className="text" style="bottom:-140px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque voluptates a, aspernatur eos suscipit dolorem, veritatis mollitia officiis optio </div>
-    </div>
-</div> */}
       <ReactCardFlip isFlipped={flip}
         flipDirection="horizontal">
         <div onClick={() => {
@@ -41,12 +30,12 @@ export default function ProfileCard({ props }) {
           />
           <div className="master__Card w-full flex flex-col justify-between ml-4 mt-2 font-semibold text-2xl z-10">
             <div>
-              <div className="font-bold text-white text-2xl z-10"><h1>ID</h1></div>
+              <div className="font-bold grad-text text-2xl z-10"><h1>ID</h1></div>
               <div className="font-bold text-white text-2xl z-10">
-                <h1>{typeof (Id) === 'string' ? Id[5] + Id[6] : null}</h1></div>
+                <h1 className="grad-text"> {typeof (Id) === 'string' ? Id[5] + Id[6] : null}</h1></div>
             </div>
             <div className="font-bold text-white text-2xl mb-2 z-10">
-              <h1>{props.name}</h1>
+              <h1 className="grad-text">{props.name}</h1>
             </div>
           </div>
         </div>
@@ -57,7 +46,7 @@ export default function ProfileCard({ props }) {
           ))
         }} style={{cursor:"pointer",width: "350px", height: "450px",margin:"20px",marginBottom:"0px", textAlign: "center",borderColor:"white",borderWidth:"5px",borderRadius:"4px"}} className="relative w-72 h-72 m-2">
           <div className="">
-            <h1 style={{ color: "white", margin: "20px",marginBottom:"0px",fontSize:"30px"}}>{props.name}</h1>
+            <h1 style={{ color: "white", margin: "20px",marginBottom:"0px",fontSize:"30px" ,fontWeight:"normal"}}>{props.name}</h1>
               <br />
               <div style={{display:"flex",justifyContent:"space-evenly",marginBottom:"20px"}}>
               {

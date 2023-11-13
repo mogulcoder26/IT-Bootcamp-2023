@@ -38,7 +38,7 @@ export default function Navbar_me() {
                     </svg>
                     &nbsp; &nbsp; &nbsp;
                     <span className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-bold tracking-tighter text-transparent">
-                        IT Bootcamp
+                        Bootcamp
                     </span>
                 </a>
                 <button

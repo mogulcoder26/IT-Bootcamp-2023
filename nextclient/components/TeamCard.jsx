@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-import { text } from 'stream/consumers'
 
 const TeamCard = ({name,team,imgsrc}) => {
   return (
@@ -16,7 +14,7 @@ const TeamCard = ({name,team,imgsrc}) => {
     
             <div className='content'>
             <div className="rec"></div>
-                <h1>{name}</h1>
+                <h1 >{name}</h1>
                 <h1>{team}</h1>
                 
             </div>
