@@ -6,9 +6,10 @@ const createHomie = async (req, res) => {
     const { name, email, id, about, linkedin,insta,github } = req.body
     console.log("Init!")
     try {
-        const { key : imageKey } = await uploadPicToS3(req?.file);
-        console.log("imageKey : " , imageKey);
-
+        if(req?.file) {
+            const { key : imageKey } = await uploadPicToS3(req?.file);
+            console.log("imageKey : " , imageKey);
+        }
         const user = {
             name,
             email,

@@ -12,7 +12,7 @@ const formSchema = new mongoose.Schema({
     },  
     imageKey :{
         type : String,
-        required :true,
+        required :false,
         // unique :true,
     },
     id :{
